@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #e7a56c;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            margin-left: auto;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .search-bar input {
+            padding: 5px;
+            margin-left: 20px;
+            width: 150px;
+        }
+        .banner {
+            background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e7a56c;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .login-container h2 {
+            color: #e7a56c;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .confirm-button {
+            background-color: #d2691e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .confirm-button:hover {
+            background-color: #b2581c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Adopt a Pet Logo"> <!-- Replace with the actual logo URL -->
+        <h1>Adopt a Pet</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="navbar">
+            <a href="homePage.html">Home</a>
+            <a href="#">Browse Pets</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Donate</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        Welcome <br> Please create a new account
+    </div>
+
+    <div class="login-container">
+        <h2>Register</h2>
+        <form action = "homePage.html" method = "POST">
+            <div class="form-group">
+                <label for="username">User name:</label>
+                <input type="text" id="username" placeholder="Placeholder">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Placeholder">
+            </div>
+            <div class="form-group">
+                <label for="repassword">Re-enter Password:</label>
+                <input type="password" id="repassword" placeholder="Placeholder">
+            </div>
+            <button type="submit" class="confirm-button">Confirm</button>
+        </form>
+    </div>
+
+</body>
+</html>

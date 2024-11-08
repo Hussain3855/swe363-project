@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Admin Home</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Header / Navigation styling */
+        .header {
+            background-color: #3c3c3c;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        /* Banner styling */
+        .banner {
+            background: url('cat-banner.jpg') center/cover no-repeat;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #db8c37;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Section Titles */
+        .section-title {
+            padding: 15px;
+            font-weight: bold;
+            color: #3c3c3c;
+            font-size: 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Pet Card styling */
+        .pet-card {
+            background-color: #db8c37;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            margin: 10px;
+        }
+
+        .pet-card img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        /* Adoption and Donation Requests styling */
+        .request-card {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+        }
+
+        .request-card img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .request-card .details {
+            font-size: 14px;
+            color: #3c3c3c;
+        }
+
+        /* Button to Post a New Pet */
+        .post-new-pet {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .post-new-pet button {
+            background-color: #db8c37;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo and Navigation -->
+        <div class="header">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="Adopt a Pet Logo">
+                <h1>Adopt a Pet</h1>
+            </div>
+        </div>
+
+        <!-- Banner Section -->
+        <div class="banner">
+            Welcome Admin
+        </div>
+
+        <!-- Pets Posted Section -->
+        <div class="section-title">Pets posted</div>
+        <div class="pet-card">
+            <img src="bird.jpg" alt="Bird Image">
+            <div class="details">
+                <p><strong>Species:</strong> Bird</p>
+                <p><strong>Price:</strong> $$$</p>
+                <p><strong>Age:</strong> XX</p>
+            </div>
+        </div>
+
+        <!-- Adoption Requests Section -->
+        <div class="section-title">Adoption requests</div>
+        <div class="request-card">
+            <img src="user-icon.png" alt="User Icon">
+            <div class="details">
+                <p><strong>Name:</strong> xy xy</p>
+                <p><strong>Contact:</strong> 9xxxxxx xxx</p>
+            </div>
+        </div>
+
+        <!-- Donations Section -->
+        <div class="section-title">Donations</div>
+        <div class="request-card">
+            <img src="user-icon.png" alt="User Icon">
+            <div class="details">
+                <p><strong>Name:</strong> xy xy</p>
+                <p><strong>Amount:</strong> XX</p>
+            </div>
+        </div>
+
+        <!-- Post a New Pet Button -->
+        <div class="post-new-pet">
+            <button>&#8679;</button>
+            <p>Post a new pet</p>
+        </div>
+    </div>
+</body>
+</html>

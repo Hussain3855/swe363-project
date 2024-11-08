@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post New Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a2d82;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #5a2d82;
+        }
+
+        /* Form styling */
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #e3a869;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group .price-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group .price-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #e3a869;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+
+        .form-group .upload-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            color: #5a2d82;
+            background-color: #e3a869;
+            border: 2px dashed #d8a869;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e3a869;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">Adopt a Pet</div>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Browse Pets</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Donate</a>
+            <a href="#">About us</a>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <form action="#" method="POST">
+            <!-- Pet Species -->
+            <div class="form-group">
+                <label for="species">Pet species</label>
+                <select id="species" name="species">
+                    <option value="">Species</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Horse">Horse</option>
+                    <option value="Bird">Bird</option>
+                </select>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" placeholder="Age">
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label for="price">Price</label>
+                <div class="price-container">
+                    <input type="text" class="price-input" id="price-currency" name="price-currency" placeholder="SAR">
+                    <input type="text" class="price-input" id="price-amount" name="price-amount" placeholder="Enter amount">
+                </div>
+                <div class="error-message">Error: Invalid input</div>
+            </div>
+
+            <!-- Add Pictures -->
+            <div class="form-group">
+                <label for="picture">Add pictures</label>
+                <div class="upload-btn">+</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Confirm</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        
+        /* Header styling */
+        .header {
+            background-color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a2d82;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #5a2d82;
+        }
+
+        /* Main content styling */
+        .content {
+            padding: 10px;
+        }
+
+        .pet-card {
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .pet-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .pet-details {
+            padding: 10px;
+            background-color: #e3a869;
+            color: white;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header, .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">Adopt a Pet</div>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Browse Pets</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Donate</a>
+            <a href="#">About us</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- Pet Card 1 -->
+        <div class="pet-card">
+            <img src="cat-image.jpg" alt="Cute Cat" class="pet-image">
+            <div class="pet-details">
+                <p>species: Cat<br>price: $$$<br>Age: XX</p>
+            </div>
+        </div>
+
+        <!-- Pet Card 2 -->
+        <div class="pet-card">
+            <img src="horse-image.jpg" alt="Horse" class="pet-image">
+            <div class="pet-details">
+                <p>species: Horse<br>price: $$$<br>Age: XX</p>
+            </div>
+        </div>
+
+        <!-- Pet Card 3 -->
+        <div class="pet-card">
+            <img src="bird-image.jpg" alt="Bird" class="pet-image">
+            <div class="pet-details">
+                <p>species: Bird<br>price: $$$<br>Age: XX</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

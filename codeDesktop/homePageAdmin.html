@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Shelter Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #e7a56c;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            margin-left: auto;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .search-bar input {
+            padding: 5px;
+            margin-left: 20px;
+            width: 150px;
+        }
+        .banner {
+            background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e7a56c;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .section {
+            text-align: center;
+            width: 30%;
+        }
+        .section img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .section h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        .post-new {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .post-new a {
+            color: #d2691e;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Adopt a Pet Logo"> <!-- Replace with the actual logo URL -->
+        <h1>Adopt a Pet</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="navbar">
+            <a href="homePage.html">Home</a>
+            <a href="#">Browse Pets</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Donate</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        Shelter Admin Home Page
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h3>Pets Posted</h3>
+            <img src="bird.jpg" alt="Bird"> <!-- Replace with the actual bird image URL -->
+            <p>Species: Bird</p>
+            <p>Price: $$$</p>
+            <p>Age: XX</p>
+        </div>
+        
+        <div class="section">
+            <h3>Adoption Requests</h3>
+            <img src="person-icon.png" alt="Person Icon"> <!-- Replace with an icon if needed -->
+            <p>Name: xy xy</p>
+            <p>Contact: 9xxxxxxxx</p>
+        </div>
+        
+        <div class="section">
+            <h3>Donations</h3>
+            <img src="person-icon.png" alt="Person Icon"> <!-- Replace with an icon if needed -->
+            <p>Name: xy xy</p>
+            <p>Amount: XX</p>
+        </div>
+    </div>
+
+    <div class="post-new">
+        <a href="#">Post a new pet</a>
+    </div>
+
+</body>
+</html>
