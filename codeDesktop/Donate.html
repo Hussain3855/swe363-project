@@ -13,30 +13,68 @@
             background: #f9f9f9;
         }
         .header {
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 10px 20px;
+            background-color: #e7a56c;
+            padding: 15px 20px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        /* Logo */
+        .logo {
+            display: flex;
             align-items: center;
         }
-        .header img {
-            height: 70px;
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
-        .navigation {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            letter-spacing: 2px
-        }
-        .navigation a {
-            text-decoration: none;
-            color: black;
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
             font-weight: bold;
         }
-        .navigation a.donate-link {
-             color: orange; 
-        }       
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }      
         .hero {
             display: flex;         
             align-items: center;    
@@ -84,8 +122,14 @@
 </head>
 <body>
     <div class="header">
-        <img src="../assets/Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
-        <div class="navigation">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet">
+            <h2>Adopt a Pet</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="nav">
             <a href="Home.html">Home</a>
             <a href="Browse-pets.html">Browse Pets</a>
             <a href="Contact-us.html">Contact Us</a>
@@ -93,6 +137,7 @@
             <a href="About-us.html" style="color: #ff7f50;">About us</a>
  
         </div>
+        
     </div>
     <div class="hero">
         <div class="hero-content">

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #e7a56c;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.2em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
+
+        /* Banner Section */
+        .banner {
+            text-align: center;
+            background: linear-gradient(rgba(129, 124, 122, 0.8), rgba(143, 132, 130, 0.8)), url('cat.png') no-repeat center center;
+            background-size: cover;
+            padding: 60px 20px;
+            color: #fff;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .banner h1 {
+            font-size: 2em;
+            margin: 0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .contact-info, .inquiry-form-container {
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background: linear-gradient(to right, #d99156, #ffb47d);
+            color: white;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .contact-info p, .contact-info a {
+            margin: 5px 0;
+            font-size: 1em;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Inquiry Form */
+        .inquiry-form-container h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d99156;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #c4814a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e7a56c;
+            color: #333;
+            font-size: 0.8em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-mobile {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav">
+            <a href="Home-mobile.html">Home</a>
+            <a href="Browse-pets-mobile.html">Browse Pets</a>
+            <a href="Contact-us-mobile.html">Contact Us</a>
+            <a href="Donate-mobile.html">Donate</a>
+            <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav class="nav-mobile">
+        <a href="Home-mobile.html">Home</a>
+        <a href="Browse-pets-mobile.html">Browse Pets</a>
+        <a href="Contact-us-mobile.html">Contact Us</a>
+        <a href="Donate-mobile.html">Donate</a>
+        <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+    </nav>
+
+    <!-- Main Content Section with Padding for Fixed Header -->
+    <section class="content">
+        <!-- Banner Section -->
+        <section class="banner">
+            <h1>We’d Love to Hear from You!</h1>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><span class="icon">📞</span> Call us<br>+966570939391</p>
+                <p><span class="icon">📍</span> Location<br>1234-Greenville St</p>
+                <p>Follow us on social media</p>
+                <a href="https://www.youtube.com/adptpet" target="_blank">
+                    <span class="icon">▶️</span> YouTube
+                </a>
+                <a href="https://www.twitter.com/@adptpet" target="_blank">
+                    <span class="icon">🐦</span> Twitter
+                </a>
+                <a href="https://www.instagram.com/@adptpet" target="_blank">
+                    <span class="icon">📷</span> Instagram
+                </a>
+            </div>
+
+            <div class="inquiry-form-container">
+                <h2>Your Thoughts and Inquiries</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us what's on your mind"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        &copy; 2024 Adopt a Pet. All rights reserved.
+    </footer>
+
+</body>
+</html>

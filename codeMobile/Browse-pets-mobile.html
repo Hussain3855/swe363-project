@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Adopt a Pet Logo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#"class="active">Browse Pets</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Donate</a>
+            <a href="#">About us</a>
+        </nav>
+    </header>
+
+    <!-- Banner with Background Image -->
+    <section class="banner">
+        <h1>Available Pets</h1>
+    </section>
+
+    <!-- Filters and Search Bar -->
+    <section class="filters">
+        <select id="typeFilter">
+            <option value="">Type</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+        </select>
+        <select id="breedFilter">
+            <option value="">Breed</option>
+            <option value="tabby">Tabby</option>
+            <option value="siamese">Siamese</option>
+            <option value="bulldog">Bulldog</option>
+            <option value="labrador">Labrador</option>
+        </select>
+        <select id="ageFilter">
+            <option value="">Age</option>
+            <option value="young">Young</option>
+            <option value="adult">Adult</option>
+        </select>
+        <select id="sizeFilter">
+            <option value="">Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <select id="genderFilter">
+            <option value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="text" id="locationFilter" placeholder="Location (e.g., California)">
+    </section>
+    
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by Name">
+    </section>
+
+    <!-- Pet Cards -->
+    <section class="pet-list">
+        <!-- Cat Cards -->
+        <div class="pet-card" data-url="profiles/profile-samantha.html" data-type="cat" data-breed="tabby" data-age="young" data-size="medium" data-gender="male" data-location="California">
+            <img src="cat1.jpg" alt="Samantha">
+            <h3>Samantha</h3>
+            <p>California (2.5km)</p>
+            <span class="gender male">♂</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-tigri.html" data-type="cat" data-breed="siamese" data-age="young" data-size="small" data-gender="female" data-location="Boston">
+            <img src="cat2.jpg" alt="Tigri">
+            <h3>Tigri</h3>
+            <p>Boston (1km)</p>
+            <span class="gender female">♀</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-milo.html" data-type="cat" data-breed="tabby" data-age="adult" data-size="large" data-gender="male" data-location="New York">
+            <img src="cat3.jpg" alt="Milo">
+            <h3>Milo</h3>
+            <p>New York (3km)</p>
+            <span class="gender male">♂</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-luna.html" data-type="cat" data-breed="siamese" data-age="young" data-size="medium" data-gender="female" data-location="Chicago">
+            <img src="cat4.jpg" alt="Luna">
+            <h3>Luna</h3>
+            <p>Chicago (4km)</p>
+            <span class="gender female">♀</span>
+        </div>
+
+        <!-- Dog Cards -->
+        <div class="pet-card" data-url="profiles/profile-max.html" data-type="dog" data-breed="bulldog" data-age="young" data-size="medium" data-gender="male" data-location="San Francisco">
+            <img src="dog1.jpg" alt="Max">
+            <h3>Max</h3>
+            <p>San Francisco (5km)</p>
+            <span class="gender male">♂</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-bella.html" data-type="dog" data-breed="labrador" data-age="adult" data-size="large" data-gender="female" data-location="Houston">
+            <img src="dog2.jpg" alt="Bella">
+            <h3>Bella</h3>
+            <p>Houston (6km)</p>
+            <span class="gender female">♀</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-charlie.html" data-type="dog" data-breed="bulldog" data-age="young" data-size="small" data-gender="male" data-location="Seattle">
+            <img src="dog3.jpg" alt="Charlie">
+            <h3>Charlie</h3>
+            <p>Seattle (2km)</p>
+            <span class="gender male">♂</span>
+        </div>
+
+        <div class="pet-card" data-url="profiles/profile-lucy.html" data-type="dog" data-breed="labrador" data-age="adult" data-size="large" data-gender="female" data-location="Denver">
+            <img src="dog4.jpg" alt="Lucy">
+            <h3>Lucy</h3>
+            <p>Denver (3.5km)</p>
+            <span class="gender female">♀</span>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
