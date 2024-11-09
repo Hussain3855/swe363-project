@@ -17,32 +17,67 @@
 
         
         .header {
-            background: #fff;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #e7a56c;
+            padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .header img {
-            height: 70px; 
-            margin-right: 20px;
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
         }
-        .navigation {
-            list-style: none;
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+ 
+        /* Navigation */
+        .nav {
             display: flex;
             gap: 20px;
-            letter-spacing: 2px
         }
-        .navigation li {
-            display: inline;
-            margin-right: 20px;
-        }
-        .navigation a {
+ 
+        .nav a {
             text-decoration: none;
-            color: #000000;
+            color: #333;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
         }
         main {
             text-align: center;
@@ -63,16 +98,23 @@
 </head>
 <body>
     <body>
-        <div class="header">
-            <img src="../assets/Screenshot 2024-10-01 at 7.12.02 PM 1.png" alt="Adopt a Pet Logo">
-            <ul class="navigation">
-                <li><a href="homePage.html">Home</a></li>
-                <li><a href="browse-pets.html">Browse Pets</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-                <li><a href="donate.html" class="donate-link">Donate</a></li>
-                <li><a href="about-us.html">About us</a></li>
-            </ul>
-        </div>
+        <header>
+            <div class="header">
+                <div class="logo">
+                    <img src="../assets/logo.png" alt="Adopt a Pet">
+                    <h2>Adopt a Pet</h2>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="nav">
+                    <a href="Home.html">Home</a>
+                    <a href="Browse-pets.html">Browse Pets</a>
+                    <a href="Contact-us.html">Contact Us</a>
+                    <a href="Donate.html">Donate</a>
+                    <a href="About-us.html" style="color: #ff7f50;">About us</a>
+         
+                </div>
         </header>
     <main>
         <h1>Your Form Has Been Submitted</h1>

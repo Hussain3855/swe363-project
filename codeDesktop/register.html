@@ -13,7 +13,7 @@
             box-sizing: border-box;
             background-color: #f9f9f9;
         }
-         .header {
+        .header {
             background-color: #e7a56c;
             padding: 15px 20px;
             display: flex;
@@ -130,15 +130,16 @@
     </style>
 </head>
 <body>
-
+<header>
     <div class="header">
-        <img src="C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\swe363-project\assets\Screenshot 2024-10-01 at 7.12.02 PM 1.png" alt="Adopt a Pet Logo"> 
-        <h1>Adopt a Pet</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet">
+            <h2>Adopt a Pet</h2>
         </div>
-        <div class="navbar">
-             <div class="navigation">
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="nav">
             <a href="Home.html">Home</a>
             <a href="Browse-pets.html">Browse Pets</a>
             <a href="Contact-us.html">Contact Us</a>
@@ -146,16 +147,15 @@
             <a href="About-us.html" style="color: #ff7f50;">About us</a>
  
         </div>
-        </div>
-    </div>
-
+</div>
+</header>>
     <div class="banner">
         Welcome <br> Please create a new account
     </div>
 
     <div class="login-container">
         <h2>Register</h2>
-        <form action = "homePage.html" method = "POST">
+        <form action = "Home.html" method = "get">
             <div class="form-group">
                 <label for="username">User name:</label>
                 <input type="text" id="username" placeholder="Placeholder">

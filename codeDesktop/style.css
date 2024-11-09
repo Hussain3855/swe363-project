@@ -11,42 +11,68 @@ body {
   color: #333;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header {
+  background-color: #e7a56c;
   padding: 15px 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .logo {
-  font-size: 1.8em;
-  color: #ff7f50;
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  height: 70px;
-  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.logo span {
-  font-size: 0.8em;
-  color: #555;
+.logo h1 {
+  font-size: 1.8em;
+  margin-left: 10px;
+  color: #333;
+  font-weight: bold;
 }
 
-nav a {
-  margin: 0 15px;
-  color: #555;
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
   text-decoration: none;
-  font-weight: 500;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a.active {
+.nav a:hover {
   color: #ff7f50;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+  border-color: #ff7f50;
+  outline: none;
 }
 
 /* Banner */
