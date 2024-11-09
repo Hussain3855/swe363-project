@@ -12,34 +12,70 @@
             margin: 0;
             padding: 0;
         }
-        .header {
+         .header {
             background-color: #e7a56c;
-            padding: 10px 20px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #ddd;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-	.logo{
-	   display : flex;
-	   align-itmes: center;
-	}
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+ 
         .logo img {
+            width: 50px;
             height: 50px;
-            margin-right: 10px;
+            border-radius: 50%;
         }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+ 
+        /* Navigation */
         .nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
+ 
         .nav a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            transition: color 0.3s;
         }
-        .search-bar input[type = "text"] {
-            padding: 5px;
-            width: 200px;
+ 
+        .nav a:hover {
+            color: #ff7f50;
         }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }
+ 
         .banner {
             background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
             background-size: cover;

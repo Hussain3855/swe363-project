@@ -13,32 +13,70 @@
             box-sizing: border-box;
             background-color: #f9f9f9;
         }
-        .header {
+         .header {
+            background-color: #e7a56c;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            padding: 10px;
-            background-color: #e7a56c;
-            border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .header img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        .navbar {
-            margin-left: auto;
+ 
+        /* Logo */
+        .logo {
             display: flex;
-            gap: 20px;
+            align-items: center;
         }
-        .navbar a {
-            text-decoration: none;
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
             color: #333;
             font-weight: bold;
         }
-        .search-bar input {
-            padding: 5px;
-            margin-left: 20px;
-            width: 150px;
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
         }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }
+ 
         .banner {
             background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
             background-size: cover;
@@ -94,7 +132,7 @@
 <body>
 
     <div class="header">
-        <img src="logo.png" alt="Adopt a Pet Logo"> <!-- Replace with the actual logo URL -->
+        <img src="C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\swe363-project\assets\Screenshot 2024-10-01 at 7.12.02 PM 1.png" alt="Adopt a Pet Logo"> 
         <h1>Adopt a Pet</h1>
         <div class="search-bar">
             <input type="text" placeholder="Search">
