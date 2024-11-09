@@ -15,31 +15,33 @@
         .header {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: #e7a56c;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #ddd;
         }
-        .header img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        .navbar {
-            margin-left: auto;
+        .logo {
             display: flex;
-            gap: 20px;
+            align-items: center;
         }
-        .navbar a {
+	.logo img{
+	   height : 50px;
+	   margin-right : 10px;
+	}
+        .nav {    
+            display: flex;
+            gap: 15px;
+	}
+        .nav a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
         }
-        .search-bar input {
+        .search-bar input[type = "text"] {
             padding: 5px;
-            margin-left: 20px;
-            width: 150px;
+            width: 200px;
         }
         .banner {
-            background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
+            background-image: url('C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\assets\cat pngg 1.png'); /* Replace with the actual image URL */
             background-size: cover;
             background-position: center;
             height: 200px;
@@ -80,17 +82,28 @@
             color: #d2691e;
             text-decoration: none;
         }
+	
+	.footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="logo.png" alt="Adopt a Pet Logo"> <!-- Replace with the actual logo URL -->
-        <h1>Adopt a Pet</h1>
+	<div class = "logo">
+	   <img src="logo.png" alt="Adopt a Pet">
+           <h2>Adopt a Pet</h2>
+	</div>
         <div class="search-bar">
             <input type="text" placeholder="Search">
         </div>
-        <div class="navbar">
+        <div class="nav">
             <a href="homePage.html">Home</a>
             <a href="#">Browse Pets</a>
             <a href="#">Contact Us</a>
@@ -99,7 +112,7 @@
         </div>
     </div>
 
-    <div class="banner">
+    <div class="content">
         Shelter Admin Home Page
     </div>
 
@@ -128,8 +141,13 @@
     </div>
 
     <div class="post-new">
-        <a href="#">Post a new pet</a>
+        <a href="postPet.html">Post a new pet</a>
     </div>
+
+<div class="footer">
+        <p>&copy; 2024 Adopt a Pet. All rights reserved.</p>
+    </div>
+
 
 </body>
 </html>
