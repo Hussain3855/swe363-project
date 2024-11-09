@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Adopt a Pet</title>
+    <title>Contact Us-mobile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -98,7 +98,7 @@
         /* Banner Section */
         .banner {
             text-align: center;
-            background: linear-gradient(rgba(129, 124, 122, 0.8), rgba(143, 132, 130, 0.8)), url('cat.png') no-repeat center center;
+            background: linear-gradient(rgba(129, 124, 122, 0.8), rgba(143, 132, 130, 0.8)), url('../assets/cat-banner.jpg') no-repeat center center;
             background-size: cover;
             padding: 60px 20px;
             color: #fff;
@@ -246,7 +246,7 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="logo.png" alt="Adopt a Pet Logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
             <h1>Adopt a Pet</h1>
         </div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -305,7 +305,7 @@
                     <div class="form-group">
                         <textarea placeholder="Tell us what's on your mind"></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="button" class="submit-button" onclick="window.location.href='Email-confirmation-mobile.html'">Submit</button>
                 </form>
             </div>
         </section>

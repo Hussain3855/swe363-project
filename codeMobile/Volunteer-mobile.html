@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer - Adopt a Pet</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        .header {
+            background-color: #e7a56c;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        .logo h1 {
+            font-size: 1.3em;
+            margin: 0 0 0 10px;
+            color: #333;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            width: 90%;
+            max-width: 300px;
+        }
+
+        /* Banner */
+        .banner {
+            text-align: center;
+            background: url('cat.png') no-repeat center center / cover;
+            padding: 50px 10px;
+            color: #f8b195;
+        }
+        .banner h1 {
+            font-size: 2em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Volunteer Section */
+        .volunteer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .job-card {
+            background-color: #d99156;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            color: white;
+            width: 100%;
+        }
+        .job-card img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .job-card h2 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .job-card p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .job-card button {
+            background-color: white;
+            color: #d99156;
+            padding: 10px;
+            border: 1px solid #d99156;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 1em;
+        }
+        .job-card button:hover {
+            background-color: #d99156;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e7a56c;
+            border-top: 1px solid #ddd;
+        }
+        .footer p {
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="Home-mobile.html">Home</a>
+            <a href="Browse-pets-mobile.html">Browse Pets</a>
+            <a href="Contact-us-mobile.html">Contact Us</a>
+            <a href="Donate-mobile.html">Donate</a>
+            <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <h1>Job Openings</h1>
+    </section>
+
+    <!-- Volunteer Job Section -->
+    <section class="volunteer-section">
+        <div class="job-card">
+            <img src="Transport.png" alt="Transporter Icon">
+            <h2>Volunteer Job: Transporter</h2>
+            <p>Openings: 2 Left</p>
+            <button>Sign Up!</button>
+        </div>
+        <div class="job-card">
+            <img src="care.png" alt="Animal Carer Icon">
+            <h2>Volunteer Job: Animal Carer</h2>
+            <p>Openings: 1 Left</p>
+            <button>Sign Up!</button> 
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt a Pet. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
