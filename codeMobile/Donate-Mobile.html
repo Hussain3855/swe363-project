@@ -25,8 +25,8 @@
             z-index: 1000;
         }
         .header img {
-            height: 50px; /* Adjust the height to ensure visibility */
-            margin-right: 10px; /* Ensure there is some space on the right */
+            height: 50px; 
+            margin-right: 10px; 
         }
         .menu-toggle {
             display: block;
@@ -34,12 +34,12 @@
             font-size: 30px;
             background: none;
             border: none;
-            margin-right: 20px; /* Added space to the right of the hamburger menu */
+            margin-right: 20px; 
         }
         .navigation {
             list-style: none;
             padding: 0;
-            display: none; /* Initially hide the menu */
+            display: none; 
             flex-direction: column;
             width: 100%;
             position: absolute;
@@ -52,7 +52,7 @@
             text-decoration: none;
             color: black;
             font-weight: bold;
-            padding: 10px 20px; /* Ensure padding is sufficient for touch targets */
+            padding: 10px 20px; 
         }
         .navigation a.donate-link {
             color: orange;
@@ -97,13 +97,13 @@
         @media (max-width: 768px) {
             .header {
                 flex-direction: row;
-                justify-content: space-between; /* Adjust alignment for mobile */
-                padding: 5px 10px; /* Reduce padding on mobile for more space */
+                justify-content: space-between; 
+                padding: 5px 10px; 
             }
             .navigation {
-                display: none; /* Ensures it's hidden on page load */
+                display: none; 
                 position: absolute;
-                top: 50px; /* Adjust top position to align with header */
+                top: 50px; 
             }
             .navigation.active {
                 display: flex;
@@ -114,7 +114,7 @@
 <body>
     <header class="header">
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <img src="../assets/Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
         <nav>
             <ul class="navigation">
                 <li><a href="Home-mobile.html">Home</a></li>
