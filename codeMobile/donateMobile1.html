@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 50px; /* Adjust the height to ensure visibility */
+            margin-right: 10px; /* Ensure there is some space on the right */
+        }
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            background: none;
+            border: none;
+            margin-right: 20px; /* Added space to the right of the hamburger menu */
+        }
+        .navigation {
+            list-style: none;
+            padding: 0;
+            display: none; /* Initially hide the menu */
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 5px -2px rgba(0,0,0,0.25);
+        }
+        .navigation a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px; /* Ensure padding is sufficient for touch targets */
+        }
+        .navigation a.donate-link {
+            color: orange;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: url('img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between; /* Adjust alignment for mobile */
+                padding: 5px 10px; /* Reduce padding on mobile for more space */
+            }
+            .navigation {
+                display: none; /* Ensures it's hidden on page load */
+                position: absolute;
+                top: 50px; /* Adjust top position to align with header */
+            }
+            .navigation.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <nav>
+            <ul class="navigation">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="browse-pets.html">Browse Pets</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="donateMobile1.html">Donate</a></li>
+                <li><a href="about-us-mobile.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Support Us</h1>
+            <p>Your generosity helps provide food, medical care, and loving homes for pets in need. Every donation, big or small, makes a difference.</p>
+            <a href="donatePaymentMobile.html" class="button">Donate Here</a>
+            <a href="#" class="button">Volunteer</a>
+            <p>Your contribution today will directly impact the lives of homeless animals. With your help, we can continue to rescue, rehabilitate, and rehome pets in need.</p>
+        </div>
+    </div>
+    <footer>
+        © 2024 Adopt a Pet. All rights reserved.
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

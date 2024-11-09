@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .header {
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .header img {
+            height: 70px; 
+            margin-right: 20px;
+        }
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            letter-spacing: 2px
+        }
+        .navigation li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .donation-form, .credit-card-form {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 45%; 
+        }
+        .donation-form h1, .credit-card-form h1 {
+            color: #333;
+        }
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box; 
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-pets.html">Browse Pets</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="donate.html" class="donate-link">Donate</a></li>
+            <li><a href="about-us.html">About us</a></li>
+        </ul>
+    </div>
+    </header>
+    <main>
+        <section class="donation-form">
+            <h1>Enter Amount to Donate</h1>
+            <input type="number" placeholder="Value" min="1">
+            <button>Confirm</button>
+        </section>
+        <section class="credit-card-form">
+            <h1>Credit Card Details</h1>
+            <label for="name-card">Name on card:</label>
+            <input type="text" id="name-card" name="name-card" placeholder="Meet Patel">
+            
+            <label for="card-number">Card number:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="0000 0000 0000 0000">
+            
+            <label for="card-expiration-month">Card expiration month:</label>
+            <input type="number" id="card-expiration-month" name="card-expiration-month" placeholder="MM" min="1" max="12">
+            
+            <label for="card-expiration-year">Card expiration year:</label>
+            <input type="number" id="card-expiration-year" name="card-expiration-year" placeholder="YYYY" min="2024" max="2034">
+            
+            
+            <label for="card-cvc">Card Security Code:</label>
+            <input type="text" id="card-cvc" name="card-cvc" placeholder="Code">
+            
+            <form action="donateDone.html" method="get">
+                <button type="submit">Donate</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        © 2024 Adopt a Pet. All rights reserved.
+    </footer>
+</body>
+</html>
