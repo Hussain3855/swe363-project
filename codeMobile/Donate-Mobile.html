@@ -13,49 +13,83 @@
             background: #f9f9f9;
         }
         .header {
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 10px 20px;
+            background-color: #e7a56c;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 10;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .header img {
-            height: 50px; 
-            margin-right: 10px; 
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
-        .menu-toggle {
-            display: block;
-            cursor: pointer;
-            font-size: 30px;
-            background: none;
-            border: none;
-            margin-right: 20px; 
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
-        .navigation {
-            list-style: none;
-            padding: 0;
-            display: none; 
-            flex-direction: column;
-            width: 100%;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background: #fff;
-            box-shadow: 0 4px 5px -2px rgba(0,0,0,0.25);
-        }
-        .navigation a {
-            text-decoration: none;
-            color: black;
+
+        .logo h1 {
+            font-size: 1.2em;
+            margin-left: 10px;
+            color: #333;
             font-weight: bold;
-            padding: 10px 20px; 
         }
-        .navigation a.donate-link {
-            color: orange;
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #d9a062;
         }
         .hero {
             display: flex;
@@ -95,36 +129,50 @@
             padding: 20px;
         }
         @media (max-width: 768px) {
-            .header {
-                flex-direction: row;
-                justify-content: space-between; 
-                padding: 5px 10px; 
+            .nav {
+                display: none;
             }
-            .navigation {
-                display: none; 
-                position: absolute;
-                top: 50px; 
+
+            .hamburger {
+                display: block;
             }
-            .navigation.active {
+
+            .nav-mobile {
                 display: flex;
             }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 <body>
     <header class="header">
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        <img src="../assets/Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
-        <nav>
-            <ul class="navigation">
-                <li><a href="Home-mobile.html">Home</a></li>
-                <li><a href="Browse-pets-mobile.html">Browse Pets</a></li>
-                <li><a href="Contact-us-mobile.html">Contact Us</a></li>
-                <li><a href="Donate-mobile.html">Donate</a></li>
-                <li><a href="About-us-mobile.html">About us</a></li>
-            </ul>
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav">
+            <a href="Home-mobile.html">Home</a>
+            <a href="Browse-pets-mobile.html">Browse Pets</a>
+            <a href="Contact-us-mobile.html">Contact Us</a>
+            <a href="Donate-mobile.html">Donate</a>
+            <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
         </nav>
     </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav class="nav-mobile" style="display: none;">
+        <a href="Home-mobile.html">Home</a>
+        <a href="Browse-pets-mobile.html">Browse Pets</a>
+        <a href="Contact-us-mobile.html">Contact Us</a>
+        <a href="Donate-mobile.html">Donate</a>
+        <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+    </nav>
     <div class="hero">
         <div class="hero-content">
             <h1>Support Us</h1>
@@ -137,11 +185,5 @@
     <footer>
         © 2024 Adopt a Pet. All rights reserved.
     </footer>
-    <script>
-        function toggleMenu() {
-            const navigation = document.querySelector('.navigation');
-            navigation.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>

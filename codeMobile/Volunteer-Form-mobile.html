@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer-Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        .header {
+            background-color: #e7a56c;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        .logo h1 {
+            font-size: 1.3em;
+            margin-left: 10px;
+            color: #333;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 90%;
+            max-width: 300px;
+        }
+
+        /* Banner */
+        .banner {
+            text-align: center;
+            background: url('cat.png') no-repeat center center / cover;
+            padding: 50px 10px;
+            color: #f8b195;
+        }
+        .banner h1 {
+            font-size: 2em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Form Section */
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            background-color: #fff;
+        }
+
+        /* Job Card */
+        .job-card {
+            background-color: #d99156;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            color: white;
+            width: 100%;
+            max-width: 300px;
+        }
+        .job-card img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .job-card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        /* Availability Section */
+        .availability {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .availability label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        .availability input {
+            margin-right: 5px;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d99156;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #c4814a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e7a56c;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="Home-mobile.html">Home</a>
+            <a href="Browse-pets-mobile.html">Browse Pets</a>
+            <a href="Contact-us-mobile.html">Contact Us</a>
+            <a href="Donate-mobile.html">Donate</a>
+            <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="job-card">
+            <img src="care.png" alt="Animal Carer Icon">
+            <h2>Animal Carer</h2>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Robert">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+966550929284">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="JohnRobert2938@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <textarea id="skills" placeholder="Good with cats..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Availability</label>
+                <div class="availability">
+                    <label><input type="radio" name="availability" value="09:00-12:00"> 09:00-12:00</label>
+                    <label><input type="radio" name="availability" value="11:00-14:00"> 11:00-14:00</label>
+                    <label><input type="radio" name="availability" value="17:00-20:00"> 17:00-20:00</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt a Pet. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

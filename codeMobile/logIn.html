@@ -13,29 +13,84 @@
         }
 
         .header {
-            background-color: #ffffff;
+            background-color: #e7a56c;
             padding: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
             border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #5a2d82;
+            display: flex;
+            align-items: center;
         }
 
-        .menu {
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.2em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+
+        .nav {
             display: flex;
             gap: 15px;
-            font-size: 14px;
         }
 
-        .menu a {
+        .nav a {
             text-decoration: none;
-            color: #5a2d82;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #d9a062;
         }
 
         .container {
@@ -95,15 +150,35 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-mobile {
+                display: flex;
+            }
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-		<img src="C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\swe363-project\assets\Screenshot 2024-10-01 at 7.12.02 PM 1.png" alt="Adopt a Pet Logo">
-                <h1>Adopt a Pet</h1>
-	</div>
-        <nav class="menu">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav">
             <a href="Home-mobile.html">Home</a>
             <a href="Browse-pets-mobile.html">Browse Pets</a>
             <a href="Contact-us-mobile.html">Contact Us</a>
@@ -112,8 +187,17 @@
         </nav>
     </header>
 
+    <!-- Mobile Dropdown Menu -->
+    <nav class="nav-mobile" style="display: none;">
+        <a href="Home-mobile.html">Home</a>
+        <a href="Browse-pets-mobile.html">Browse Pets</a>
+        <a href="Contact-us-mobile.html">Contact Us</a>
+        <a href="Donate-mobile.html">Donate</a>
+        <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+    </nav>
+
     <div class="container">
-        <div class="welcome-text">Welcome<br>Please log in</div>
+        <div class="welcome-text"><br><br><br><br>Welcome<br>Please log in</div>
 
         <div class="register-buttons">
             <button class="register-btn">Register user account</button>

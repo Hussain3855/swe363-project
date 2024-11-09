@@ -5,71 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - Adopt a Pet</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-        }
         .header {
-            background: #fff;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #e7a56c;
+            padding: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 10;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .header img {
-            height: 70px;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-        }
-        .navigation {
-            list-style: none;
+
+        .logo {
             display: flex;
-            gap: 20px;
-            letter-spacing: 2px;
+            align-items: center;
         }
-        .navigation li {
-            display: inline;
-            margin-right: 20px;
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
-        .navigation a {
-            text-decoration: none;
-            color: #000000;
+
+        .logo h1 {
+            font-size: 1.2em;
+            margin-left: 10px;
+            color: #333;
             font-weight: bold;
         }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .navigation {
+            .nav {
                 display: none;
-                position: absolute;
-                background-color: #fff;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
-            .navigation li {
+
+            .hamburger {
                 display: block;
-                margin-right: 0;
             }
-            .navigation a {
-                padding: 10px;
-                display: block;
-                text-align: center;
+
+            .nav-mobile {
+                display: flex;
             }
         }
         main {
@@ -116,19 +142,37 @@
             bottom: 0;
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 <body>
-    <div class="header">
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
-        <ul class="navigation">
-            <li><a href="Home-mobile.html">Home</a></li>
-            <li><a href="Browse-pets-mobile.html">Browse Pets</a></li>
-            <li><a href="Contact-us-mobile.html">Contact Us</a></li>
-            <li><a href="Donate-mobile.html">Donate</a></li>
-            <li><a href="About-us-mobile.html">About us</a></li>
-        </ul>
-    </div>
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav">
+            <a href="Home-mobile.html">Home</a>
+            <a href="Browse-pets-mobile.html">Browse Pets</a>
+            <a href="Contact-us-mobile.html">Contact Us</a>
+            <a href="Donate-mobile.html">Donate</a>
+            <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav class="nav-mobile" style="display: none;">
+        <a href="Home-mobile.html">Home</a>
+        <a href="Browse-pets-mobile.html">Browse Pets</a>
+        <a href="Contact-us-mobile.html">Contact Us</a>
+        <a href="Donate-mobile.html">Donate</a>
+        <a href="About-us-mobile.html" style="color: #ff7f50;">About us</a>
+    </nav>
     <main>
         <section class="donation-form">
             <h1>Enter Amount to Donate</h1>
@@ -158,11 +202,5 @@
     <footer>
         © 2024 Adopt a Pet. All rights reserved.
     </footer>
-    <script>
-        function toggleMenu() {
-            const navigation = document.querySelector('.navigation');
-            navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 </body>
 </html>
