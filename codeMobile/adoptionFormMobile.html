@@ -30,7 +30,7 @@
             letter-spacing: 2px
         }
         .navigation li {
-            display: none; /* Initially hide menu items for mobile */
+            display: none; 
         }
         .navigation a {
             text-decoration: none;
@@ -38,14 +38,14 @@
             font-weight: bold;
         }
         .menu-toggle {
-            display: block; /* Show menu toggle button */
+            display: block; 
             cursor: pointer;
             border: none;
             background: none;
             font-size: 24px;
         }
         .menu-toggle:before {
-            content: "\2630"; /* Hamburger icon */
+            content: "\2630"; 
         }
         .form-container {
             width: 80%;
@@ -97,15 +97,15 @@
         }
         @media (max-width: 768px) {
             .navigation li {
-                display: block; /* Show menu items in dropdown on mobile */
+                display: block; 
             }
             .navigation {
                 flex-direction: column;
                 width: 100%;
-                display: none; /* Hide navigation initially */
+                display: none; 
             }
             .navigation.active {
-                display: flex; /* Show navigation when active */
+                display: flex;
                 position: absolute;
                 top: 70px;
                 left: 0;
@@ -121,9 +121,9 @@
         <button class="menu-toggle" onclick="toggleMenu()"></button>
         <nav>
             <ul class="navigation">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="homePage.html">Home</a></li>
                 <li><a href="browse-pets.html">Browse Pets</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="contact-us-mobile.html">Contact Us</a></li>
                 <li><a href="donateMobile1.html">Donate</a></li>
                 <li><a href="about-us-mobile.html">About us</a></li>
             </ul>
