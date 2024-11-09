@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 70px;
+        }
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            letter-spacing: 2px
+        }
+        .navigation a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .navigation a.donate-link {
+             color: orange; 
+        }       
+        .hero {
+            display: flex;         
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column; 
+            background: url('img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            background-size: cover; 
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 770px;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-pets.html">Browse Pets</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="donate.html" class="donate-link">Donate</a></li>
+            <li><a href="about-us.html">About us</a></li>
+        </ul>
+    </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Support Us</h1>
+            <p>Your generosity helps provide food, medical care, and loving homes for pets in need. Every donation, big or small, makes a difference.</p>
+            <a href="donate-payment.html" class="button">Donate Here</a>
+            <a href="#" class="button">Volunteer</a>
+            <p>Your contribution today will directly impact the lives of homeless animals. With your help, we can continue to rescue, rehabilitate, and rehome pets in need.</p>
+        </div>
+    </div>
+    <footer>
+        © 2024 Adopt a Pet. All rights reserved.
+    </footer>
+</body>
+</html>

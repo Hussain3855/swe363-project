@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 50px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            letter-spacing: 2px;
+        }
+        .navigation li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        main {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px; /* Adjust padding to account for fixed header */
+        }
+        h1 {
+            margin: 20px 0;
+            color: orange;
+        }
+        p {
+            color: orange;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .navigation {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                width: 100%;
+                background-color: #fff;
+                display: none;
+                padding: 0;
+            }
+            .navigation li {
+                display: block;
+                margin: 0;
+            }
+            .navigation li a {
+                padding: 10px;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <ul class="navigation">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="browse-pets.html">Browse Pets</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="donateMobile1.html">Donate</a></li>
+            <li><a href="about-us-mobile.html">About us</a></li>
+        </ul>
+    </div>
+    <main>
+        <h1>Thank You For Your Donation!!</h1>
+    </main>
+    <script>
+        function toggleMenu() {
+            const navigation = document.querySelector('.navigation');
+            navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .header {
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 70px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            letter-spacing: 2px;
+        }
+        .navigation li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .navigation {
+                display: none;
+                position: absolute;
+                background-color: #fff;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .navigation li {
+                display: block;
+                margin-right: 0;
+            }
+            .navigation a {
+                padding: 10px;
+                display: block;
+                text-align: center;
+            }
+        }
+        main {
+            padding-top: 90px; /* Adjust padding to account for fixed header */
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .donation-form, .credit-card-form {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 45%; 
+        }
+        .donation-form h1, .credit-card-form h1 {
+            color: #333;
+        }
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box; 
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <img src="Screenshot 2024-10-01 at 7.12.02 PM.png" alt="Adopt a Pet Logo">
+        <ul class="navigation">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="browse-pets.html">Browse Pets</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="donateMobile1.html">Donate</a></li>
+            <li><a href="about-us-mobile.html">About us</a></li>
+        </ul>
+    </div>
+    <main>
+        <section class="donation-form">
+            <h1>Enter Amount to Donate</h1>
+            <input type="number" placeholder="Value" min="1">
+            <button onclick="document.location='donatDoneMobile.html'">Confirm</button>
+        </section>
+        <section class="credit-card-form">
+            <h1>Credit Card Details</h1>
+            <label for="name-card">Name on card:</label>
+            <input type="text" id="name-card" name="name-card" placeholder="Meet Patel">
+            
+            <label for="card-number">Card number:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="0000 0000 0000 0000">
+            
+            <label for="card-expiration-month">Card expiration month:</label>
+            <input type="number" id="card-expiration-month" name="card-expiration-month" placeholder="MM" min="1" max="12">
+            
+            <label for="card-expiration-year">Card expiration year:</label>
+            <input type="number" id="card-expiration-year" name="card-expiration-year" placeholder="YYYY" min="2024" max="2034">
+            
+            <label for="card-cvc">Card Security Code:</label>
+            <input type="text" id="card-cvc" name="card-cvc" placeholder="Code">
+            
+            <button type="submit" onclick="document.location='donatDoneMobile.html'">Donate</button>
+        </section>
+    </main>
+    <footer>
+        © 2024 Adopt a Pet. All rights reserved.
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navigation = document.querySelector('.navigation');
+            navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
