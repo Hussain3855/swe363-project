@@ -14,29 +14,84 @@
         
         /* Header styling */
         .header {
-            background-color: #ffffff;
+            background-color: #e7a56c;
             padding: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
             border-bottom: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #5a2d82;
+            display: flex;
+            align-items: center;
         }
 
-        .menu {
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.2em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+
+        .nav {
             display: flex;
             gap: 15px;
-            font-size: 14px;
         }
 
-        .menu a {
+        .nav a {
             text-decoration: none;
-            color: #5a2d82;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff7f50;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-mobile a:hover {
+            background-color: #d9a062;
         }
 
         /* Main content styling */
@@ -94,7 +149,7 @@
     <div class="content">
         <!-- Pet Card 1 -->
         <div class="pet-card">
-            <img src="C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\swe363-project\assets\cat pngg 1.png" alt="Cute Cat" class="pet-image">
+            <img src="../assets/cat pngg 1.png" alt="Cute Cat" class="pet-image">
             <div class="pet-details">
                 <p>species: Cat<br>price: 2000 SAR<br>Age: 1 year</p>
             </div>
@@ -102,7 +157,7 @@
 
         <!-- Pet Card 2 -->
         <div class="pet-card">
-            <img src="C:\Users\VICTUS\Desktop\SWE 363\Project\phase 5\swe363-project\assets\horse.png.jpg" alt="Horse" class="pet-image">
+            <img src="../assets/horse.png.jpg" alt="Horse" class="pet-image">
             <div class="pet-details">
                 <p>species: Horse<br>price: 10000 SAR<br>Age: 3 years</p>
             </div>
