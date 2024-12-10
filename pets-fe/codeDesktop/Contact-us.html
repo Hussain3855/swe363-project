@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Adopt a Pet</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #e7a56c;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+ 
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }      
+        .hero {
+            display: flex;         
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column;
+            background: url('../assets/img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 770px;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+       
+
+        /* Banner Section */
+        .banner {
+            text-align: center;
+            background: url('cat-banner.jpg') no-repeat center center / cover;
+            padding: 80px 20px;
+            color: #f8b195;
+        }
+
+        .banner h1 {
+            font-size: 3.5em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            background-color: #d99156;
+            color: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Inquiry Form Styling */
+        .inquiry-form-container {
+            background-color: #e0e0e0;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .inquiry-form-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d99156;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #c4814a;
+        }
+
+        .icon {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px 20px;
+            background-color: #e7a56c;
+            color: #333;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo h1 {
+                font-size: 1.5em;
+            }
+            .nav {
+                display: none;
+            }
+ 
+            .hamburger {
+                display: block;
+            }
+ 
+            .nav-mobile {
+                display: flex;
+            }
+        }
+
+       
+    </style>
+</head>
+<script>
+    function toggleMenu() {
+        const navMobile = document.querySelector('.nav-mobile');
+        navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+ 
+        <nav class="nav">
+            <a href="Home.html">Home</a>
+            <a href="Browse-pets.html">Browse Pets</a>
+            <a href="Contact-us.html">Contact Us</a>
+            <a href="Donate.html">Donate</a>
+            <a href="About-us.html" style="color: #ff7f50;">About us</a>
+            <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+        </nav>
+
+
+    </header>
+<nav class="nav-mobile" style="display: none;">
+        <a href="Home.html">Home</a>
+        <a href="Browse-pets.html">Browse Pets</a>
+        <a href="Contact-us.html">Contact Us</a>
+        <a href="Donate.html">Donate</a>
+        <a href="About-us.html" style="color: #ff7f50;">About us</a>
+        <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+    </nav>
+    <!-- Banner Section -->
+    <section class="banner">
+        <h1>We’d Love to Hear from You!</h1>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><span class="icon">📞</span> Call us<br><br>+966570939391</p>
+            <p><span class="icon">📍</span> Location<br><br>1234-Greevill St</p>
+            <p>Follow us on social media</p>
+            <a href="https://www.youtube.com/adptpet" target="_blank">
+                <span class="icon">▶️</span> YouTube
+            </a>
+            <a href="https://www.twitter.com/@adptpet" target="_blank">
+                <span class="icon">🐦</span> Twitter
+            </a>
+            <a href="https://www.instagram.com/@adptpet" target="_blank">
+                <span class="icon">📷</span> Instagram
+            </a>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div class="inquiry-form-container">
+            <h2>We'd Like to Hear Your Thoughts and Inquiries</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input id="contactName" type="text" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input id="contactEmail" type="email" placeholder="Enter your Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="contactMessage" placeholder="Tell us what's on your mind"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt a Pet. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

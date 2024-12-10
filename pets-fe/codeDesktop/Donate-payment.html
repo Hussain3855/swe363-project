@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Adopt a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .header {
+            background-color: #e7a56c;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+ 
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }      
+        .hero {
+            display: flex;         
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column;
+            background: url('../assets/img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 770px;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+ 
+            .hamburger {
+                display: block;
+            }
+ 
+            .nav-mobile {
+                display: flex;
+            }
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .donation-form, .credit-card-form {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 45%; 
+        }
+        .donation-form h1, .credit-card-form h1 {
+            color: #333;
+        }
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box; 
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet">
+            <h2>Adopt a Pet</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+ 
+        <div class="nav">
+            <a href="Home.html">Home</a>
+            <a href="Browse-pets.html">Browse Pets</a>
+            <a href="Contact-us.html">Contact Us</a>
+            <a href="Donate.html">Donate</a>
+            <a href="About-us.html" style="color: #ff7f50;">About us</a>
+            <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+ 
+        </div>
+        
+    </div>
+    </header>
+    <nav class="nav-mobile" style="display: none;">
+        <a href="Home.html">Home</a>
+        <a href="Browse-pets.html">Browse Pets</a>
+        <a href="Contact-us.html">Contact Us</a>
+        <a href="Donate.html">Donate</a>
+        <a href="About-us.html" style="color: #ff7f50;">About us</a>
+        <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+    </nav>
+    <main>
+        <section class="donation-form">
+            <h1>Enter Amount to Donate</h1>
+            <input id="donationAmount" type="number" placeholder="Value" min="1">
+            <button>Confirm</button>
+        </section>
+        <section class="credit-card-form">
+            <h1>Credit Card Details</h1>
+            <label for="name-card">Name on card:</label>
+            <input type="text" id="name-card" name="name-card" placeholder="Meet Patel">
+            
+            <label for="card-number">Card number:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="0000 0000 0000 0000">
+            
+            <label for="card-expiration-month">Card expiration month:</label>
+            <input type="number" id="card-expiration-month" name="card-expiration-month" placeholder="MM" min="1" max="12">
+            
+            <label for="card-expiration-year">Card expiration year:</label>
+            <input type="number" id="card-expiration-year" name="card-expiration-year" placeholder="YYYY" min="2024" max="2034">
+            
+            
+            <label for="card-cvc">Card Security Code:</label>
+            <input type="text" id="card-cvc" name="card-cvc" placeholder="Code">
+            
+            <form id="donationForm" action="donateDone.html" method="get">
+                <button type="submit">Donate</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        © 2024 Adopt a Pet. All rights reserved.
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

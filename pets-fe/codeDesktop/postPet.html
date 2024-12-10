@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Post New Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #e7a56c;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+ 
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }      
+        .hero {
+            display: flex;         
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column;
+            background: url('../assets/img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 770px;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+ 
+            .hamburger {
+                display: block;
+            }
+ 
+            .nav-mobile {
+                display: flex;
+            }
+        }
+        .banner {
+            background-image: url('cat-image.jpg'); /* Replace with the actual image URL */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e7a56c;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group select, 
+        .form-group input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+        .confirm-button {
+            background-color: #d2691e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .confirm-button:hover {
+            background-color: #b2581c;
+        }
+        .other-species {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleOtherSpecies() {
+            const speciesSelect = document.getElementById("type");
+            const otherSpeciesInput = document.getElementById("other-type");
+            otherSpeciesInput.style.display = speciesSelect.value === "other" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+	<div class = "logo">
+	   <img src="../assets/Screenshot 2024-10-01 at 7.12.02 PM 1.png" alt="Adopt a Pet">
+            <h2>Adopt a Pet</h2>
+	</div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+ 
+        <div class="nav">
+            <a href="Home.html">Home</a>
+            <a href="Browse-pets.html">Browse Pets</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="donate.html">Donate</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+    </div>
+    <nav class="nav-mobile" style="display: none;">
+        <a href="Home.html">Home</a>
+        <a href="Browse-pets.html">Browse Pets</a>
+        <a href="Contact-us.html">Contact Us</a>
+        <a href="Donate.html">Donate</a>
+        <a href="About-us.html" style="color: #ff7f50;">About us</a>
+        <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+    </nav>
+    <div class="banner">
+        Post New Pet
+    </div>
+
+    <div class="form-container">
+        <form id="postPetForm">
+            <!-- NAME -->
+            <div class="form-group">
+                <label for="name">Enter pet name:</label>
+                <input type="text" id="name" placeholder="Enter pet name">
+            </div>
+            <!-- TYPE -->
+            <div class="form-group">
+                <label for="type">Pet type</label>
+                <select id="type" onchange="toggleOtherSpecies()">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="bird">Bird</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <!-- OTHER TYPE -->
+            <div class="form-group other-species" id="other-type">
+                <label for="other-type-input">Please specify type:</label>
+                <input type="text" id="other-type-input" placeholder="Enter type">
+            </div>
+            <!-- BREED -->
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type = "text" placeholder = "Enter breed" id="breed">
+            </div>
+            <!-- AGE -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <select id="age">
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                </select>
+            </div>
+            <!-- SIZE -->
+            <div class="form-group">
+                <label for="size">Size</label>
+                <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <!-- GENDER -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <!-- LOCATION -->
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter location">
+            </div>
+            <!-- PRICE -->
+            <div class="form-group">
+                <label for="price">Price (SAR)</label>
+                <input type="text" id="price" placeholder="Enter price">
+            </div>
+            <!-- DESCRIPTION -->
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Enter description">
+            </div>
+            <!-- PICTURE -->
+            <div class="form-group">
+                <label for="picture">Add Pictures</label>
+                <input type="file" id="picture" accept="image/*">
+            </div>
+        
+            <button type="submit" class="submit-button">Submit</button>  
+        </form>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

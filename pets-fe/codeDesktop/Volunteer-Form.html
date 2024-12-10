@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Volunteer-Form</title>
+        <style>
+           
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+            }
+           
+        .header {
+            background-color: #e7a56c;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+ 
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+ 
+        .logo h1 {
+            font-size: 1.8em;
+            margin-left: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+            padding: 10px;
+        }
+ 
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+ 
+        .nav a:hover {
+            color: #ff7f50;
+        }
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #e7a56c;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .nav-mobile a {
+            padding: 10px 20px;
+            color: #333;
+            text-align: center;
+            display: block;
+        }
+ 
+        .nav-mobile a:hover {
+            background-color: #d9a062;
+        }
+ 
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+ 
+        .search-bar input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+ 
+        .search-bar input[type="text"]:focus {
+            border-color: #ff7f50;
+            outline: none;
+        }      
+        .hero {
+            display: flex;        
+            align-items: center;    
+            justify-content: center;
+            flex-direction: column;
+            background: url('../assets/img-requirements-to-adopt-a-pet.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            height: 770px;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+ 
+            .hamburger {
+                display: block;
+            }
+ 
+            .nav-mobile {
+                display: flex;
+            }
+        }
+   
+            .banner {
+                text-align: center;
+                background: url('../assets/cat-banner.jpg') no-repeat center center / cover;
+                padding: 80px 20px;
+                color: #f8b195;
+            }
+   
+            .banner h1 {
+                font-size: 3.5em;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            }
+   
+            .form-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+                gap: 20px;
+                background-color: #fff;
+            }
+   
+            .job-card {
+                background-color: #d99156;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                width: 200px;
+                height: 400px;
+                color: white;
+            }
+   
+            .job-card img {
+                width: 100px;
+                margin-bottom: 15px;
+            }
+   
+            .job-card h2 {
+                margin-top: 10px;
+            }
+   
+            .form-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                width: 400px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+   
+            .form-group {
+                margin-bottom: 15px;
+            }
+   
+            .form-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+   
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+   
+            .availability {
+                display: flex;
+                justify-content: space-between;
+            }
+   
+            .availability label {
+                display: flex;
+                align-items: center;
+                font-weight: normal;
+            }
+   
+            .availability input {
+                margin-right: 5px;
+            }
+   
+            .submit-button {
+                width: 100%;
+                padding: 10px;
+                background-color: #d99156;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+   
+            .submit-button:hover {
+                background-color: #c4814a;
+            }
+            .footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #e7a56c;
+                border-top: 1px solid #ddd;
+                margin-top: 20px;
+            }
+        </style>
+        <script>
+            function toggleMenu() {
+                const navMobile = document.querySelector('.nav-mobile');
+                navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+            }
+        </script>
+ 
+    </head>
+<body>
+   
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Adopt a Pet Logo">
+            <h1>Adopt a Pet</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="Home.html">Home</a>
+            <a href="Browse-pets.html">Browse Pets</a>
+            <a href="Contact-us.html">Contact Us</a>
+            <a href="Donate.html">Donate</a>
+            <a href="About-us.html" style="color: #ff7f50;">About us</a>
+            <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+        </nav>
+        <nav class="nav-mobile" style="display: none;">
+            <a href="Home.html">Home</a>
+            <a href="Browse-pets.html">Browse Pets</a>
+            <a href="Contact-us.html">Contact Us</a>
+            <a href="Donate.html">Donate</a>
+            <a href="About-us.html" style="color: #ff7f50;">About us</a>
+            <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+ 
+    <section class="banner">
+        <h1>Thank you for your cooperation!</h1>
+    </section>
+ 
+    <section class="form-section">
+        <div class="job-card">
+            <img src="../assets/logo.png" alt="Animal Carer Icon">
+            <h2>Animal Carer</h2>
+        </div>
+ 
+        <div class="form-container">
+            <form id="volunteerForm" action="form-handler-url" method="POST">
+                <div class="form-group">
+                    <label for="volunteerName">Full Name</label>
+                    <input type="text" id="volunteerName" name="volunteerName" placeholder="John Robert" required>
+                </div>
+                <div class="form-group">
+                    <label for="volunteerPhone">Phone Number</label>
+                    <input type="tel" id="volunteerPhone" name="volunteerPhone" placeholder="+966550929284" required>
+                </div>
+                <div class="form-group">
+                    <label for="volunteerEmail">Email</label>
+                    <input type="email" id="volunteerEmail" name="volunteerEmail" placeholder="JohnRobert2938@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="volunteerSkills">Skills</label>
+                    <textarea id="volunteerSkills" name="volunteerSkills" placeholder="Good with cats..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Availability</label>
+                    <div class="availability">
+                        <label><input type="radio" id="volunteerAvailability1" name="availability" value="09:00-12:00" required> 09:00-12:00</label>
+                        <label><input type="radio" id="volunteerAvailability2" name="availability" value="11:00-14:00"> 11:00-14:00</label>
+                        <label><input type="radio" id="volunteerAvailability3" name="availability" value="17:00-20:00"> 17:00-20:00</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="footer">
+            <p>&copy; 2024 Adopt a Pet. All rights reserved.</p>
+        </div>
+    </section>
+ 
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+ 
